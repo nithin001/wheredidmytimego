@@ -9,12 +9,18 @@ function App() {
   const [color, setColor] = useState(colors[0]);
   const [coord, setCoord] = useState({ x: 0, y: 0 });
 
-  let handleTouch = (event) => {
+  const handleTouch = (event) => {
     const touch = event.touches[0];
     if (touch) {
       setCoord({ x: touch.clientX, y: touch.clientY });
     }
   };
+
+  const updateColor = (color) => {
+    setCoord({ x: 0, y: 0 });
+    setColor(color);
+  };
+
   return (
     <div className="bg-amber-50">
       <div className="max-w-[500px] mx-auto p-4">
@@ -27,7 +33,7 @@ function App() {
           >
             <CurrentDay key={date} date={date} coord={coord} color={color} />
           </div>
-          <Colors colors={colors} setColor={setColor} color={color} />
+          <Colors colors={colors} setColor={updateColor} color={color} />
         </div>
       </div>
     </div>
