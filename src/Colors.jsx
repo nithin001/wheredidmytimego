@@ -3,7 +3,7 @@ import { StopIcon } from "@heroicons/react/24/solid";
 
 function Colors({ colors, setColor, color }) {
   return (
-    <div className="flex flex-wrap mx-auto justify-center mt-2">
+    <div className="flex flex-wrap mx-auto justify-center mt-12">
       {colors.map((currentColor) => {
         const outline = currentColor === color ? "outline outline-2" : "";
         return (

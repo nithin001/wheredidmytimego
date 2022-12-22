@@ -17,12 +17,12 @@ function App() {
   };
   return (
     <div
-      className="bg-amber-50 h-screen"
+      className="bg-amber-50"
       onTouchMove={handleTouch}
       onTouchStart={handleTouch}
       onTouchEnd={handleTouch}
     >
-      <div className="max-w-[500px] mx-auto p-4 h-full">
+      <div className="max-w-[500px] mx-auto p-4">
         <div className="bg-white h-full">
           <ChooseDate date={date} setDate={setDate} />
           <CurrentDay key={date} date={date} coord={coord} color={color} />
