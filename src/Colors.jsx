@@ -15,7 +15,7 @@ function Colors({ colors, setColor, color }) {
             }}
           >
             <StopIcon
-              className={`h-16 w-16 m-3 text-${currentColor}-500 ${outline}`}
+              className={`h-8 w-8 md:h-16 md:w-16 m-1 md:m-3 text-${currentColor}-500 ${outline}`}
             />
           </button>
         );

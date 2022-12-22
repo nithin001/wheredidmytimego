@@ -27,9 +27,9 @@ function Hour({ id, coord, color }) {
   return (
     <div ref={ref}>
       {selected ? (
-        <SolidStopIcon className={`h-16 w-16 m-3 text-${selected}-500`} />
+        <SolidStopIcon className={`h-8 w-8 md:h-16 md:w-16 m-1 md:m-3 text-${selected}-500`} />
       ) : (
-        <StopIcon className="h-16 w-16 m-3" />
+        <StopIcon className="h-8 w-8 md:h-16 md:w-16 m-1 md:m-3" />
       )}
     </div>
   );
