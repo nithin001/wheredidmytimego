@@ -22,7 +22,7 @@ function App() {
       onTouchStart={handleTouch}
       onTouchEnd={handleTouch}
     >
-      <div className="w-[500px] mx-auto p-4 h-full">
+      <div className="max-w-[500px] mx-auto p-4 h-full">
         <div className="bg-white h-full">
           <ChooseDate date={date} setDate={setDate} />
           <CurrentDay key={date} date={date} coord={coord} color={color} />
