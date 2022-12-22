@@ -11,7 +11,7 @@ function ChooseDate({ date, setDate }) {
   const momentDate = moment(date);
   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
     <button
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+      className="bg-rose-300 text-white font-bold py-2 px-4 rounded"
       onClick={onClick}
       ref={ref}
     >
@@ -26,7 +26,7 @@ function ChooseDate({ date, setDate }) {
           onClick={() => {
             setDate(momentDate.subtract(1, "days").toDate());
           }}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-rose-300 text-white font-bold py-2 px-4 rounded"
         >
           <ArrowLongLeftIcon className="h-6 w-6 text-white" />
         </button>
@@ -47,7 +47,7 @@ function ChooseDate({ date, setDate }) {
           onClick={() => {
             setDate(momentDate.add(1, "days").toDate());
           }}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="bg-rose-300 text-white font-bold py-2 px-4 rounded"
         >
           <ArrowLongRightIcon className="h-6 w-6 text-white" />
         </button>

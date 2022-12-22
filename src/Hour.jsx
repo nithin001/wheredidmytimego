@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { StopIcon } from "@heroicons/react/24/outline";
 import { StopIcon as SolidStopIcon } from "@heroicons/react/24/solid";
 import useLocalStorage from "./useLocalStorage";
 import moment from "moment";
@@ -12,7 +11,7 @@ const isHourHovered = (hour, x, y) => {
 };
 
 function Hour({ id, coord, color, hour }) {
-  const [selected, setSelected] = useLocalStorage(id, false);
+  const [selected, setSelected] = useLocalStorage(id, "gray");
   const ref = useRef(null);
 
   useEffect(() => {
@@ -30,13 +29,9 @@ function Hour({ id, coord, color, hour }) {
   return (
     <div className="flex flex-col items-center m-1 md:m-3" ref={ref}>
       <span className="text-xs text-gray-400">{number}</span>
-      {selected ? (
-        <SolidStopIcon
-          className={`h-12 w-12 md:h-16 md:w-16 text-${selected}-500`}
-        />
-      ) : (
-        <StopIcon className="h-12 w-12 md:h-16 md:w-16" />
-      )}
+      <SolidStopIcon
+        className={`h-12 w-12 md:h-16 md:w-16 text-${selected}-300`}
+      />
     </div>
   );
 }
