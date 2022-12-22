@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { StopIcon } from "@heroicons/react/24/outline";
 import { StopIcon as SolidStopIcon } from "@heroicons/react/24/solid";
 import useLocalStorage from "./useLocalStorage";
+import moment from "moment";
 
 const isHourHovered = (hour, x, y) => {
   if (hour.left < x && hour.right > x && hour.top < y && hour.bottom > y) {
@@ -10,7 +11,7 @@ const isHourHovered = (hour, x, y) => {
   return false;
 };
 
-function Hour({ id, coord, color }) {
+function Hour({ id, coord, color, hour }) {
   const [selected, setSelected] = useLocalStorage(id, false);
   const ref = useRef(null);
 
@@ -24,12 +25,17 @@ function Hour({ id, coord, color }) {
     }
   }, [coord.x, coord.y, id, setSelected, color]);
 
+  const number = moment(hour, ["HH"]).format("hh");
+
   return (
-    <div ref={ref}>
+    <div className="flex flex-col items-center m-1 md:m-3" ref={ref}>
+      <span className="text-xs text-gray-400">{number}</span>
       {selected ? (
-        <SolidStopIcon className={`h-12 w-12 md:h-16 md:w-16 m-1 md:m-3 text-${selected}-500`} />
+        <SolidStopIcon
+          className={`h-12 w-12 md:h-16 md:w-16 text-${selected}-500`}
+        />
       ) : (
-        <StopIcon className="h-12 w-12 md:h-16 md:w-16 m-1 md:m-3" />
+        <StopIcon className="h-12 w-12 md:h-16 md:w-16" />
       )}
     </div>
   );

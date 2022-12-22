@@ -4,7 +4,7 @@ import CurrentDay from "./CurrentDay";
 import Colors from "./Colors";
 
 function App() {
-  const colors = ["amber", "cyan", "emerald"];
+  const colors = ["amber", "cyan", "emerald", "lime", "purple"];
   const [date, setDate] = useState(new Date());
   const [color, setColor] = useState(colors[0]);
   const [coord, setCoord] = useState({ x: 0, y: 0 });
