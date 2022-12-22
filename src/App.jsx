@@ -16,16 +16,17 @@ function App() {
     }
   };
   return (
-    <div
-      className="bg-amber-50"
-      onTouchMove={handleTouch}
-      onTouchStart={handleTouch}
-      onTouchEnd={handleTouch}
-    >
+    <div className="bg-amber-50">
       <div className="max-w-[500px] mx-auto p-4">
         <div className="bg-white h-full">
           <ChooseDate date={date} setDate={setDate} />
-          <CurrentDay key={date} date={date} coord={coord} color={color} />
+          <div
+            onTouchMove={handleTouch}
+            onTouchStart={handleTouch}
+            onTouchEnd={handleTouch}
+          >
+            <CurrentDay key={date} date={date} coord={coord} color={color} />
+          </div>
           <Colors colors={colors} setColor={setColor} color={color} />
         </div>
       </div>
