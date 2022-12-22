@@ -5,7 +5,7 @@ import moment from "moment/moment";
 function CurrentDay({ date, coord, color }) {
   const formattedDate = moment(date).format("i-MMM-DD-YYYY");
   const hours = [];
-  for (let i = 0; i <= 24; i++) {
+  for (let i = 0; i < 24; i++) {
     hours.push(i);
   }
 
